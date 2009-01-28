@@ -2,6 +2,17 @@
 
 Command line utility for serving the current directory over HTTP.
 
+== USAGE:
+
+From your current working directory, issue the command:
+
+* share
+
+=== Optional parameters:
+
+[port]  -p --port, defaults to 9999
+[share name]  -s --share, defaults to Sharing {PWD} on {HOSTNAME}
+
 == REQUIREMENTS:
 
 I've tested this with:

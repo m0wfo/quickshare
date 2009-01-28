@@ -6,13 +6,12 @@ module Share
 
       options = {
         :port     => 9999,
-        :share_name => "Quickshare"
+        :share_name => "Sharing #{Dir.pwd.split('/').last} on #{Socket.gethostname}"
       }
       mandatory_options = %w(  )
 
       parser = OptionParser.new do |opts|
         opts.banner = <<-BANNER.gsub(/^          /,'')
-          This application is wonderful because...
 
           Usage: #{File.basename($0)} [options]
 
@@ -24,7 +23,7 @@ module Share
                 "Default: 9999") { |arg| options[:port] = arg }
         opts.on("-s", "--share=SHARENAME", String,
                 "Specify a name to identify this share.",
-                "Default: 'Quickshare'") { |arg| options[:share_name] = arg }
+                "Default: 'Sharing {PWD} on {HOSTNAME}'") { |arg| options[:share_name] = arg }
         opts.on("-h", "--help",
                 "Show this help message.") { stdout.puts opts; exit }
         opts.parse!(arguments)
@@ -40,14 +39,13 @@ module Share
       # The magic starts here.
       s = WEBrick::HTTPServer.new(
         :Port            => port,
-        :DocumentRoot    => Dir::pwd
+        :DocumentRoot    => Dir.pwd
       )
       
-      handle = Net::DNS::MDNSSD.register(share_name, '_http._tcp', 'local', port, 'path' => '/')
-      
       s.mount("/",WEBrick::HTTPServlet::FileHandler, Dir::pwd, true)
+      broadcast = Thread.new {system("dns-sd -R '#{share_name}' _http._tcp . #{port} path=/")}
       
-      trap("INT"){ s.shutdown; handle.stop; exit }
+      trap("INT"){ broadcast.terminate; s.shutdown; exit! }
       s.start
       
       while true do

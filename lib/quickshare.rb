@@ -4,7 +4,6 @@ $:.unshift(File.dirname(__FILE__)) unless
 module Quickshare
   VERSION = '0.0.1'
   
-  require "rubygems"
-  require 'net/dns/mdns-sd'
   require "webrick"
+  require "socket"
 end
