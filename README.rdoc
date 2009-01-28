@@ -4,11 +4,8 @@
 
 == DESCRIPTION:
 
-FIX (describe your package)
+Command line utility for serving the current directory over HTTP.
 
-== FEATURES/PROBLEMS:
-
-* FIX (list of features or problems)
 
 == SYNOPSIS:
 
@@ -16,11 +13,16 @@ FIX (describe your package)
 
 == REQUIREMENTS:
 
-* FIX (list of requirements)
+I've tested this with:
+
+* Mac OS X
+* ruby 1.8
+
+Service broadcasting uses the native dns-sd utility rather than the net/mdns gem to keep things dependency-light, so this probably won't work on other *NIXes.
 
 == INSTALL:
 
-* FIX (sudo gem install, anything else)
+sudo gem install quickshare
 
 == LICENSE:
 
