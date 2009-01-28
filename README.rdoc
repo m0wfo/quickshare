@@ -1,15 +1,6 @@
-= quickshare
-
-* FIX (url)
-
 == DESCRIPTION:
 
 Command line utility for serving the current directory over HTTP.
-
-
-== SYNOPSIS:
-
-  FIX (code sample of usage)
 
 == REQUIREMENTS:
 
