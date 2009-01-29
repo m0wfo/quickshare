@@ -1,5 +1,5 @@
 # -*- encoding: utf-8 -*-
-require "rake"
+# require "rake"
 Gem::Specification.new do |s|
   s.name = %q{quickshare}
   s.version = "0.0.1"
