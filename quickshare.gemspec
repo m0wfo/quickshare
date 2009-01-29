@@ -1,5 +1,5 @@
 # -*- encoding: utf-8 -*-
-
+require "rake"
 Gem::Specification.new do |s|
   s.name = %q{quickshare}
   s.version = "0.0.1"
@@ -9,8 +9,8 @@ Gem::Specification.new do |s|
   s.date = %q{2009-01-29}
   s.description = %q{Command line utility for serving the current directory over HTTP.}
   s.email = ["chris@mowforth.com"]
-  s.files = ["test/test_helper.rb", "test/test_quickshare.rb", "test/test_share_cli.rb"]
-  s.has_rdoc = true
+  s.files = FileList['lib/**/*.rb', 'bin/*', '[A-Z]*', 'test/**/*'].to_a
+  s.has_rdoc = false
   s.homepage = %q{http://github.com/cmowforth/quickshare}
   s.rdoc_options = ["--main", "README.rdoc"]
   s.require_paths = ["lib"]
@@ -18,6 +18,8 @@ Gem::Specification.new do |s|
   s.rubygems_version = %q{1.3.1}
   s.summary = %q{Command line utility for serving the current directory over HTTP.}
   s.test_files = ["test/test_helper.rb", "test/test_quickshare.rb", "test/test_share_cli.rb"]
+  s.bindir = "bin"
+  s.executables = "share"
 
   if s.respond_to? :specification_version then
     current_version = Gem::Specification::CURRENT_SPECIFICATION_VERSION
