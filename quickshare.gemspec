@@ -11,8 +11,7 @@ Gem::Specification.new do |s|
   s.email = ["chris@mowforth.com"]
   s.files = ["test/test_helper.rb", "test/test_quickshare.rb", "test/test_share_cli.rb"]
   s.has_rdoc = true
-  s.homepage = %q{Command line utility for serving the current directory over HTTP.}
-  s.post_install_message = %q{PostInstall.txt}
+  s.homepage = %q{http://github.com/cmowforth/quickshare}
   s.rdoc_options = ["--main", "README.rdoc"]
   s.require_paths = ["lib"]
   s.rubyforge_project = %q{quickshare}
