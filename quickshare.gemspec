@@ -7,19 +7,21 @@ Gem::Specification.new do |s|
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Chris Mowforth"]
   s.date = %q{2009-01-29}
+  s.default_executable = %q{share}
   s.description = %q{Command line utility for serving the current directory over HTTP.}
   s.email = ["chris@mowforth.com"]
-  s.files = ["lib/quickshare.rb", "lib/share/cli.rb", "bin/share", "History.txt", "Manifest.txt", "Rakefile", "README.rdoc", "test/test_helper.rb", "test/test_quickshare.rb", "test/test_share_cli.rb"]
-  s.has_rdoc = false
-  s.homepage = %q{http://github.com/cmowforth/quickshare}
+  s.executables = ["share"]
+  s.extra_rdoc_files = ["History.txt", "Manifest.txt", "README.rdoc"]
+  s.files = ["History.txt", "Manifest.txt", "README.rdoc", "Rakefile", "bin/share", "lib/quickshare.rb", "lib/share/cli.rb", "script/console", "script/destroy", "script/generate", "test/test_helper.rb", "test/test_quickshare.rb", "test/test_share_cli.rb"]
+  s.has_rdoc = true
+  s.homepage = %q{Command line utility for serving the current directory over HTTP.}
+  s.post_install_message = %q{PostInstall.txt}
   s.rdoc_options = ["--main", "README.rdoc"]
   s.require_paths = ["lib"]
   s.rubyforge_project = %q{quickshare}
   s.rubygems_version = %q{1.3.1}
   s.summary = %q{Command line utility for serving the current directory over HTTP.}
   s.test_files = ["test/test_helper.rb", "test/test_quickshare.rb", "test/test_share_cli.rb"]
-  s.bindir = "bin"
-  s.executables = "share"
 
   if s.respond_to? :specification_version then
     current_version = Gem::Specification::CURRENT_SPECIFICATION_VERSION
