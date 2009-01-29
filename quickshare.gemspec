@@ -1,5 +1,5 @@
 # -*- encoding: utf-8 -*-
-# require "rake"
+
 Gem::Specification.new do |s|
   s.name = %q{quickshare}
   s.version = "0.0.1"
@@ -9,7 +9,8 @@ Gem::Specification.new do |s|
   s.date = %q{2009-01-29}
   s.description = %q{Command line utility for serving the current directory over HTTP.}
   s.email = ["chris@mowforth.com"]
-  s.files = FileList['lib/**/*.rb', 'bin/*', '[A-Z]*', 'test/**/*'].to_a
+  s.files = Dir['lib/**/*.rb'] + Dir['bin/*']
+  s.files << Dir['[A-Z]*'] + Dir['test/**/*']  
   s.has_rdoc = false
   s.homepage = %q{http://github.com/cmowforth/quickshare}
   s.rdoc_options = ["--main", "README.rdoc"]
