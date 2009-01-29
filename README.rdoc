@@ -10,8 +10,8 @@ From your current working directory, issue the command:
 
 === Optional parameters:
 
-[port]  -p --port, defaults to 9999
-[share name]  -s --share, defaults to Sharing {PWD} on {HOSTNAME}
+-p  --port, defaults to 9999
+-s  --share, defaults to Sharing {PWD} on {HOSTNAME}
 
 == REQUIREMENTS:
 
